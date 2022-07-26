@@ -51,6 +51,10 @@ restoreBackUp(){
     cd /var/www/
     tar -xvf MinecraftPurpleThemebackup.tar.gz
     rm MinecraftPurpleThemebackup.tar.gz
+
+    cd /var/www/pterodactyl
+    yarn build:production
+    sudo php artisan optimize:clear
 }
 echo "Copyright (c) 2022 Angelillo15 | angelillo15.es"
 echo "This program is free software: you can redistribute it and/or modify"
