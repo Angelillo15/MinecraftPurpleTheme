@@ -5,8 +5,7 @@ if (( $EUID != 0 )); then
     exit
 fi
 
-bash clear
-
+clear
 
 installTheme(){
     cd /var/www/
@@ -16,6 +15,7 @@ installTheme(){
     rm -r MinecraftPurpleTheme
     git clone https://github.com/Angelillo15/MinecraftPurpleTheme.git
     cd MinecraftPurpleTheme
+    rm /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     mv index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv MinecraftPurpleTheme.css /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
@@ -37,7 +37,7 @@ installTheme(){
 
 installThemeQuestion(){
     while true; do
-        read -p "Are you sure that you want to install the theme [Y/n]? " yn
+        read -p "Are you sure that you want to install the theme [y/n]? " yn
         case $yn in
             [Yy]* ) installTheme; break;;
             [Nn]* ) exit;;
