@@ -5,6 +5,9 @@ if (( $EUID != 0 )); then
     exit
 fi
 
+bash clear
+
+
 installTheme(){
     cd /var/www/
     tar -cvf MinecraftPurpleThemebackup.tar.gz pterodactyl
