@@ -46,6 +46,10 @@ installThemeQuestion(){
     done
 }
 
+repair(){
+    bash <(curl https://raw.githubusercontent.com/Angelillo15/MinecraftPurpleTheme/main/repair.sh)
+}
+
 restoreBackUp(){
     echo "Restoring backup..."
     cd /var/www/
@@ -64,7 +68,8 @@ echo "Website: https://angelillo15.es/"
 echo ""
 echo "[1] Install theme"
 echo "[2] Restore backup"
-echo "[3] Exit"
+echo "[3] Repair panel (use if you have an error in the theme installation)"
+echo "[4] Exit"
 
 read -p "Please enter a number: " choice
 if [ $choice == "1" ]
@@ -76,6 +81,10 @@ if [ $choice == "2" ]
     restoreBackUp
 fi
 if [ $choice == "3" ]
+    then
+    repair
+fi
+if [ $choice == "4" ]
     then
     exit
 fi
