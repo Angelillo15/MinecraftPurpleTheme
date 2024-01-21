@@ -21,7 +21,7 @@ installTheme(){
     mv MinecraftPurpleTheme.css /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
     cd /var/www/pterodactyl
 
-    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     apt update
     apt install -y nodejs
 
